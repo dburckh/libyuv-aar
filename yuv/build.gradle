@@ -1,0 +1,44 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    namespace 'com.homesoft.libyuv'
+    compileSdk 33
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 33
+
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+                //arguments "-DANDROID_STL=c++_shared"
+                arguments "-DANDROID_STL=none"
+            }
+        }
+    }
+    buildFeatures {
+        prefabPublishing true
+    }
+    prefab {
+        yuv {
+            headers "src/main/cpp/libyuv/include"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+//            version "3.22.1"
+        }
+    }
+//    ndkVersion '25.1.8937393'
+}
+
+dependencies {
+}
