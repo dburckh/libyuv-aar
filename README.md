@@ -1,5 +1,5 @@
 # libyuv-aar
-This is a work in progress for building a prefab AAR with libyuv.  This is intend for C/C++ NDK developers.
+This a prefab AAR for libyuv.  It allows you to pull in a prebuilt version of libyuv into your app.  This is intend for C/C++ NDK developers.
 
 For Java/Kotlin use, this is an excellent library: 
 https://github.com/crow-misia/libyuv-android  
@@ -17,7 +17,7 @@ This project uses a git submobule linked to https://chromium.googlesource.com/li
 
     `gradlew yuv::assemble`
 
-2. Add the AAR as you normally would. 
+2. Add the AAR as a project dependency.  The AAR has no dependencies, so you can add it directly.  Or  
 3. Add the following lines to your CMakeLists.txt.  See sample app CMakeLists.txt or the official documentation link below. 
 ```CMake
 #Add this line

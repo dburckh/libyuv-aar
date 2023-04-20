@@ -17,8 +17,9 @@ project("yuv")
 add_library( # Sets the name of the library.
         yuv
 
-        # Sets the library as a shared library.
+        # Sets the library as a static library.
         STATIC
+        #SHARED
 
         # Provides a relative path to your source file(s).
         libyuv/source/compare.cc
