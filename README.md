@@ -40,7 +40,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         maven {
-            url = 'https://maven.pkg.github.com/dburckh/libraw-aar'
+            url = 'https://maven.pkg.github.com/dburckh/libyuv-aar'
             credentials {
                 username = System.getenv("GPR_USER")
                 //This password expires, so it will need to updated in environment
