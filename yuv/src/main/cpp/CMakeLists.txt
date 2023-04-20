@@ -18,7 +18,7 @@ add_library( # Sets the name of the library.
         yuv
 
         # Sets the library as a shared library.
-        SHARED
+        STATIC
 
         # Provides a relative path to your source file(s).
         libyuv/source/compare.cc
