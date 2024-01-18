@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.homesoft.libyuv'
+    namespace 'com.homesoft.yuv'
     compileSdk 34
 
     // This is the default, but Jitpack.io requires it to be explicit
@@ -19,6 +19,7 @@ android {
 
         externalNativeBuild {
             cmake {
+                //cppFlags ""
                 //arguments "-DANDROID_STL=c++_shared"
                 arguments "-DANDROID_STL=none"
             }

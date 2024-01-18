@@ -12,7 +12,6 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.homesoft.libyuv_aar"
         minSdk 23
         targetSdk 34
         versionCode 1
@@ -20,7 +19,7 @@ android {
 
         externalNativeBuild {
             cmake {
-                cppFlags ""
+                //cppFlags ""
                 //arguments "-DANDROID_STL=c++_shared"
             }
         }
