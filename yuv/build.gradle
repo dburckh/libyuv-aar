@@ -5,11 +5,11 @@ plugins {
 
 android {
     namespace 'com.homesoft.libyuv'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         minSdk 21
-        targetSdk 33
+        targetSdk 34
 
         externalNativeBuild {
             cmake {
@@ -38,37 +38,24 @@ android {
 //            version "3.22.1"
         }
     }
+    publishing {
+        singleVariant("release")
+    }
 //    ndkVersion '25.1.8937393'
 }
 //Install to local maven repo
 //gradlew yuv:publishToMavenLocal
-
-//gradlew yuv:publish
 publishing {
     publications {
-        yuv(MavenPublication) {
-            groupId = "${rootProject.ext.groupId}"
-            artifactId = "${rootProject.ext.artifactId}"
-            version "${rootProject.ext.artifactVersion}"
-            artifact("$buildDir/outputs/aar/yuv-release.aar")
-        }
-    }
+        release(MavenPublication) {
+            // Jitpack overrides these,
+            // but they are necessary for local testing
+            groupId = 'com.github.dburckh'
+            artifactId = 'libyuv-aar'
+            version = '0.9.1'
 
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            /** Configure path of your package repository on Github
-             ** Replace GITHUB_USERID with your/organisation Github userID
-             ** and REPOSITORY with the repository name on GitHub
-             */
-            url = uri("https://maven.pkg.github.com/dburckh/libyuv-aar")
-            credentials {
-                /** Create github.properties in root project folder file with
-                 ** gpr.usr=GITHUB_USER_ID & gpr.key=PERSONAL_ACCESS_TOKEN
-                 ** Set env variable GPR_USER & GPR_API_KEY if not adding a properties file**/
-
-                username = System.getenv("GPR_USER")
-                password = System.getenv("GPR_API_KEY")
+            afterEvaluate {
+                from components.release
             }
         }
     }
