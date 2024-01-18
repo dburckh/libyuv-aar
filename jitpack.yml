@@ -1,4 +1,2 @@
-jdk:
-  - openjdk17
 before_install:
   - git clone --recurse-submodules https://github.com/dburckh/libyuv-aar.git

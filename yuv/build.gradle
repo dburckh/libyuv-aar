@@ -6,7 +6,10 @@ plugins {
 android {
     namespace 'com.homesoft.libyuv'
     compileSdk 34
+    // This is the default for AGP 8.2, but Jitpack.io requires it to be explicit
+    ndkVersion 25.1.8937393
 
+    // This is the default, but Jitpack.io requires it to be explicit
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
