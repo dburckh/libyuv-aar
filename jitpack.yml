@@ -1,2 +1,5 @@
 before_install:
   - git clone --recurse-submodules https://github.com/dburckh/libyuv-aar.git
+install:
+  - echo "Running a custom install command"
+  - ./gradlew yuv:build yuv:publishToMavenLocal  # Full build was failing, just build YUV
